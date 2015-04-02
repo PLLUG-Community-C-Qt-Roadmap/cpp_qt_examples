@@ -5,11 +5,18 @@ CONFIG -= qt
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    second.cpp
+    class1.cpp \
+    class2.cpp \
+    class3.cpp \
+    personalinformation.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    second.h
+    class1.h \
+    class2.h \
+    class3.h \
+    personalinformation.h \
+    cplusplustypes.h
 
