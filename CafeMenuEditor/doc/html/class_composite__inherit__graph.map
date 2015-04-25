@@ -1,0 +1,4 @@
+<map id="Composite" name="Composite">
+<area shape="rect" id="node2" href="$class_menu.html" title="The Menu class is a composite class &#45; menu of items and submenus. " alt="" coords="5,241,87,333"/>
+<area shape="rect" id="node3" href="$class_menu_item.html" title="The MenuItem class is main component, from which derive composites and leaves and also class for menu..." alt="" coords="111,219,218,355"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_composite.html" title="Composite" alt="" coords="5,31,89,57"/>
+<area shape="rect" id="node2" href="$class_menu.html" title="The Menu class is a composite class &#45; menu of items and submenus. " alt="" coords="149,5,204,32"/>
+<area shape="rect" id="node3" href="$class_menu_item.html" title="The MenuItem class is main component, from which derive composites and leaves and also class for menu..." alt="" coords="137,56,216,83"/>
+</map>
