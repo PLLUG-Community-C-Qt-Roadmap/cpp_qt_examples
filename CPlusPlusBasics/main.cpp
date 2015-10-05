@@ -1,4 +1,5 @@
 #include <array>
+#include <vector>
 #include <memory>
 #include <climits>
 #include <typeinfo>
@@ -55,6 +56,23 @@ void printPlanetName(Planets planet)
         std::cout << "Wrong planet!" << std::endl;
         break;
     }
+}
+
+void testFunctionParameters(std::vector<int> firstPrm, std::vector<int>& secondPrm, std::vector<int>* thirdPrm)
+{
+    firstPrm.push_back(2);
+    std::sort(std::begin(secondPrm), std::end(secondPrm));
+    thirdPrm->clear();
+}
+
+void printVector(const std::vector<int>& vector)
+{
+    for(const auto& element : vector)
+    {
+        std::cout << element << " ";
+    }
+    std::cout << "size: " << vector.size() << std::endl;
+    std::cout << std::endl;
 }
 
 int main(int argc, char *argv[])
@@ -184,6 +202,15 @@ int main(int argc, char *argv[])
     //        std::cout << *(word++) << " ";
     //    }
     //    std::cout << std::endl;
+
+    //    std::vector<int> firstVector {0, 0};
+    //    std::vector<int> secondVector {5, 2, 6, 1, 3, 7, 4, 9, 0, 8};
+    //    std::vector<int> thirdVector {22, 33, 44};
+    //    testFunctionParameters(firstVector, secondVector, &thirdVector);
+
+    //    printVector(firstVector);
+    //    printVector(secondVector);
+    //    printVector(thirdVector);
 
     return 0;
 }
