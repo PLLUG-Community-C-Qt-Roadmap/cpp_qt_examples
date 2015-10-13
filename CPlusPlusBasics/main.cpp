@@ -61,8 +61,14 @@ void printPlanetName(Planets planet)
 void testFunctionParameters(std::vector<int> firstPrm, std::vector<int>& secondPrm, std::vector<int>* thirdPrm)
 {
     firstPrm.push_back(2);
+
     std::sort(std::begin(secondPrm), std::end(secondPrm));
+
+    auto f = [](int value){ return value % 2 == 0; };
     thirdPrm->clear();
+    int newSize = std::count_if(std::begin(secondPrm), std::end(secondPrm), f);
+    thirdPrm->resize(newSize);
+    std::copy_if(std::begin(secondPrm), std::end(secondPrm), std::begin(*thirdPrm), f);
 }
 
 void printVector(const std::vector<int>& vector)
@@ -203,14 +209,17 @@ int main(int argc, char *argv[])
     //    }
     //    std::cout << std::endl;
 
-    //    std::vector<int> firstVector {0, 0};
-    //    std::vector<int> secondVector {5, 2, 6, 1, 3, 7, 4, 9, 0, 8};
-    //    std::vector<int> thirdVector {22, 33, 44};
-    //    testFunctionParameters(firstVector, secondVector, &thirdVector);
+        std::vector<int> firstVector(5);
+        std::iota(std::begin(firstVector), std::end(firstVector), 0);
+        printVector(firstVector);
+        std::vector<int> secondVector {5, 2, 6, 1, 3, 7, 4, 9, 0, 8};
+        std::vector<int> thirdVector{0, 0, 0, 0, -1, 3};
 
-    //    printVector(firstVector);
-    //    printVector(secondVector);
-    //    printVector(thirdVector);
+        testFunctionParameters(firstVector, secondVector, &thirdVector);
+
+        printVector(firstVector);
+        printVector(secondVector);
+        printVector(thirdVector);
 
     return 0;
 }
