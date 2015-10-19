@@ -69,7 +69,7 @@ namespace Polymorphism {
 
     public:
         std::string GetName() { return m_strName; }
-        virtual const char* Speak() = 0;
+        virtual const char* Speak() {return "???";}
     };
 
     class Cat: public Animal
