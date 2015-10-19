@@ -21,55 +21,79 @@
 ***                                                                          ***
 *******************************************************************************/
 
-#ifndef INHERITACE
-#define INHERITACE
-
-// copy from here  http://www.cplusplus.com/doc/tutorial/inheritance/
+#ifndef POLYMORPHISM
+#define POLYMORPHISM
 
 #include <iostream>
+#include <string>
 using namespace std;
-namespace Inheritance {
+namespace Polymorphism {
     class Polygon {
-    protected:
+      protected:
         int width, height;
-    public:
+      public:
         void set_values (int a, int b)
-        { width=a; height=b;}
+          { width=a; height=b; }
+        virtual int area() =0;
+        void printarea()
+          { cout << this->area() << '\n'; }
     };
 
     class Rectangle: public Polygon {
-    public:
-        int area ()
-        { return width * height; }
+      public:
+        int area (void)
+          { return (width * height); }
     };
 
     class Triangle: public Polygon {
-    public:
-        int area ()
-        { return width * height / 2; }
+      public:
+        int area (void)
+          { return (width * height / 2); }
     };
 
 
 
-    class Mother {
+    class Animal
+    {
+    //http://www.learncpp.com/cpp-tutorial/122-virtual-functions/
+    protected:
+        std::string m_strName;
+
+        // We're making this constructor protected because
+        // we don't want people creating Animal objects directly,
+        // but we still want derived classes to be able to use it.
+        Animal(std::string strName)
+            : m_strName(strName)
+        {
+        }
+
     public:
-        Mother ()
-        { cout << "Mother: no parameters\n"; }
-        Mother (int a)
-        { cout << "Mother: int parameter\n"; }
+        std::string GetName() { return m_strName; }
+        virtual const char* Speak() = 0;
     };
 
-    class Daughter : public Mother {
+    class Cat: public Animal
+    {
     public:
-        Daughter (int a)
-        { cout << "Daughter: int parameter\n\n"; }
+        Cat(std::string strName)
+            : Animal(strName)
+        {
+        }
+
+        virtual const char* Speak() { return "Meow"; }
     };
 
-    class Son : public Mother {
+    class Dog: public Animal
+    {
     public:
-        Son (int a) : Mother (a)
-        { cout << "Son: int parameter\n\n"; }
+        Dog(std::string strName)
+            : Animal(strName)
+        {
+        }
+
+        virtual const char* Speak() { return "Woof"; }
     };
+
 }
-#endif // INHERITACE
+#endif // POLYMORPHISM
 

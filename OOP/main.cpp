@@ -28,16 +28,19 @@ using namespace std;
 #include "dammoop.h" // why not <> ?
 #include "iloveencapsulation.h"
 #include "inheritace.h"
+#include "polymorphism.h"
 #define UNUSED(x) (void*)&x;
 
 void encapsulationExample(); // how not define body here?
 void inheritanceExample();
+void polymorphismExample();
 
 
 int main()
 {
     encapsulationExample();
     inheritanceExample();
+    polymorphismExample();
 }
 
 
@@ -45,6 +48,7 @@ int main()
 
 void encapsulationExample()
 {
+    cin.get();
     cout << "------Yo encapsulationExample------";
     //try to change definitions
     ILoveEncapsulation bestPractice{1,4,2,2,1};
@@ -76,6 +80,7 @@ void encapsulationExample()
 
 void inheritanceExample()
 {
+    using namespace Inheritance;
     //PART 1 no copy code
     cout << "------inheritanceExample------\n";
     cout << "no copy code\n";
@@ -85,6 +90,7 @@ void inheritanceExample()
     trgl.set_values (4,5);
     cout << rect.area() << '\n';
     cout << trgl.area() << '\n';
+    cin.get();
     //PART 2
     //constructors order;
     cout << "\n\n\n\nconstructors order\n";
@@ -92,4 +98,35 @@ void inheritanceExample()
     UNUSED(kelly);
     Son bud(0);
     UNUSED(bud);
+    cin.get();
+}
+
+void Report(Polymorphism::Animal &rAnimal)
+{
+    cout << rAnimal.GetName() << " says " << rAnimal.Speak() << endl;
+}
+
+void polymorphismExample() {
+    using namespace Polymorphism;
+    cout << "------polymorphismExample------\n";
+
+    cout << "part 1\n";
+    Cat cCat("Fred");
+    Dog cDog("Garbo");
+
+    Report(cCat);
+    Report(cDog);
+    cin.get();
+
+    cout << "part 2\n";
+    Rectangle rect;
+    Triangle trgl;
+    Polygon * ppoly1 = &rect;
+    Polygon * ppoly2 = &trgl;
+    ppoly1->set_values (4,5);
+    ppoly2->set_values (4,5);
+    ppoly1->printarea();
+    ppoly2->printarea();
+    cin.get();
+
 }

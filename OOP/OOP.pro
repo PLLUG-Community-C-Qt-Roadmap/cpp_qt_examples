@@ -10,5 +10,6 @@ SOURCES += main.cpp \
 HEADERS += \
     iloveencapsulation.h \
     dammoop.h \
-    inheritace.h
+    inheritace.h \
+    polymorphism.h
 
