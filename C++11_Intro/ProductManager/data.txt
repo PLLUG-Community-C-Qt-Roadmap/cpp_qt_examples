@@ -1,0 +1,5 @@
+4
+butter 3
+meat 15
+wine 13
+bread 5
