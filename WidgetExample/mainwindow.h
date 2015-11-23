@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
+class QCheckBox;
 class QPushButton;
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
 
@@ -13,9 +14,11 @@ public:
 
 public slots:
     void slotKaboom();
+    void slotReturnControl();
 
 private:
     QPushButton *mBigRedButton;
+    QCheckBox *mBringControlBack;
 };
 
 #endif // MAINWINDOW_H
