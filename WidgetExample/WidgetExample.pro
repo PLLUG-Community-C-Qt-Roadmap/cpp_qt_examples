@@ -11,6 +11,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    analogclock.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    analogclock.h

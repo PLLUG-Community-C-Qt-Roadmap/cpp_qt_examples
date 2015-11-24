@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "analogclock.h"
+
 #include <QCheckBox>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -53,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     verticalLayout->addLayout(horizontalLayout);
     verticalLayout->addWidget(mLineEdit);
     verticalLayout->addLayout(horizontalLayout2);
+    verticalLayout->addWidget(new AnalogClock());
 
     setLayout(verticalLayout);
 }
